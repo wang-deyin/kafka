@@ -6,6 +6,7 @@ import javax.annotation.PostConstruct;
 import javax.annotation.Resource;
 
 /**
+ * Kafka延时队列启动程序
  * @author WDYin
  * @date 2023/4/18
  **/
@@ -17,6 +18,7 @@ public class KafkaDelayApplication {
 
     /**
      * 延迟任务都可以配置在这里
+     * Kafka将消息从【延时主题】经过【延时时间】后发送到【目标主题】
      */
     @PostConstruct
     public void init() {

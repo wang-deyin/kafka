@@ -31,6 +31,13 @@ public class KafkaDelayQueueFactory {
         this.kafkaDelayConfig = kafkaDelayConfig;
     }
 
+    /**
+     * Kafka将消息从【延时主题】经过【延时时间】后发送到【目标主题】
+     * @param topic 延时主题
+     * @param group 消费者组
+     * @param delayTime 延时时间
+     * @param targetTopic 目标主题
+     */
     public void listener(String topic, String group, Integer delayTime, String targetTopic) {
         if (StringUtils.isEmpty(topic)) {
             throw new RuntimeException("topic cannot empty");
