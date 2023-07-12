@@ -1,5 +1,6 @@
-package com.wdyin.kafka.delay;
+package com.wdyin.kafka.start;
 
+import com.wdyin.kafka.delay.KafkaDelayQueueFactory;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
