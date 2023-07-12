@@ -1,4 +1,4 @@
-package com.wdyin.kafka.start;
+package com.wdyin.kafka.starter;
 
 import com.wdyin.kafka.delay.KafkaDelayQueueFactory;
 import org.springframework.stereotype.Component;
