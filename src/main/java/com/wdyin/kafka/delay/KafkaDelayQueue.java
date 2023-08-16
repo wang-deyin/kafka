@@ -27,7 +27,7 @@ class KafkaDelayQueue<K, V> {
 
     private String topic;
     private String group;
-    private Integer delayTime;
+    private Long delayTime;
     private String targetTopic;
     private KafkaDelayConfig kafkaDelayConfig;
     private KafkaSyncConsumer<K, V> kafkaSyncConsumer;
@@ -85,10 +85,10 @@ class KafkaDelayQueue<K, V> {
 
         private KafkaDelayQueue<K, V> kafkaDelayQueue;
         private Duration timeout;
-        private Integer delayTime;
+        private Long delayTime;
         private ApplicationContext applicationContext;
 
-        KafkaPollTask(KafkaDelayQueue<K, V> kafkaDelayQueue, Duration timeout, Integer delayTime, ApplicationContext applicationContext) {
+        KafkaPollTask(KafkaDelayQueue<K, V> kafkaDelayQueue, Duration timeout, Long delayTime, ApplicationContext applicationContext) {
             this.kafkaDelayQueue = kafkaDelayQueue;
             this.timeout = timeout;
             this.applicationContext = applicationContext;

@@ -9,16 +9,16 @@ import org.springframework.context.ApplicationEvent;
  * @Desc :
  */
 class KafkaPollEvent<K, V> extends ApplicationEvent {
-    private Integer delayTime;
+    private Long delayTime;
     private KafkaDelayQueue<K, V> kafkaDelayQueue;
 
-    KafkaPollEvent(Object source, Integer delayTime, KafkaDelayQueue<K, V> kafkaDelayQueue) {
+    KafkaPollEvent(Object source, Long delayTime, KafkaDelayQueue<K, V> kafkaDelayQueue) {
         super(source);
         this.delayTime = delayTime;
         this.kafkaDelayQueue = kafkaDelayQueue;
     }
 
-    Integer getDelayTime() {
+    Long getDelayTime() {
         return delayTime;
     }
 

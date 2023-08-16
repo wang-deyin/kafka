@@ -38,7 +38,7 @@ public class KafkaDelayQueueFactory {
      * @param delayTime 延时时间
      * @param targetTopic 目标主题
      */
-    public void listener(String topic, String group, Integer delayTime, String targetTopic) {
+    public void listener(String topic, String group, Long delayTime, String targetTopic) {
         if (StringUtils.isEmpty(topic)) {
             throw new RuntimeException("topic cannot empty");
         }
@@ -56,7 +56,7 @@ public class KafkaDelayQueueFactory {
         kafkaDelayQueue.send();
     }
 
-    private KafkaDelayQueue<String, String> createKafkaDelayQueue(String topic, String group, Integer delayTime, String targetTopic, KafkaSyncConsumer<String, String> kafkaSyncConsumer) {
+    private KafkaDelayQueue<String, String> createKafkaDelayQueue(String topic, String group, Long delayTime, String targetTopic, KafkaSyncConsumer<String, String> kafkaSyncConsumer) {
         KafkaDelayQueue<String, String> kafkaDelayQueue = new KafkaDelayQueue<>(kafkaSyncConsumer, kafkaDelayConfig);
         Assert.notNull(applicationContext, "kafkaDelayQueue need applicationContext");
         kafkaDelayQueue.setApplicationContext(applicationContext);

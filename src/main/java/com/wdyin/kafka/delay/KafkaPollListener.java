@@ -31,7 +31,7 @@ public class KafkaPollListener<K, V> implements ApplicationListener<KafkaPollEve
     @Override
     public void onApplicationEvent(KafkaPollEvent<K, V> event) {
         ConsumerRecords<K, V> records = (ConsumerRecords<K, V>) event.getSource();
-        Integer delayTime = event.getDelayTime();
+        Long delayTime = event.getDelayTime();
         KafkaDelayQueue<K, V> kafkaDelayQueue = event.getKafkaDelayQueue();
         KafkaSyncConsumer<K, V> kafkaSyncConsumer = kafkaDelayQueue.getKafkaSyncConsumer();
 
