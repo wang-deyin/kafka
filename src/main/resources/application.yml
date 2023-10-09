@@ -1,4 +1,0 @@
-spring:
-  kafka:
-    consumer:
-      bootstrap-servers: 192.168.0.79:9092,192.168.0.80:9092
