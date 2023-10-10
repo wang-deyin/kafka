@@ -24,7 +24,7 @@ public class KafkaDelayApplication {
     @PostConstruct
     public void init() {
         //延迟30秒
-        kafkaDelayQueueFactory.listener("delay-30-second-topic", "delay-30-second-group", 30 * 1000L, "delay-60-second-target-topic");
+        kafkaDelayQueueFactory.listener("delay-30-second-topic", "delay-30-second-group", 30 * 1000L, "delay-30-second-target-topic");
         //延迟60秒
         kafkaDelayQueueFactory.listener("delay-60-second-topic", "delay-60-second-group", 60 * 1000L, "delay-60-second-target-topic");
         //延迟30分钟
